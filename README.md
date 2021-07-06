@@ -17,3 +17,7 @@
 Contributions, issues, and feature requests are welcome!
 
 Give a ⭐️ if you like our project!
+
+
+
+<h6> photo credit: https://github.com/halfrost/halfrost </h6>
