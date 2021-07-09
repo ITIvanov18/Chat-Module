@@ -15,7 +15,7 @@ var room="";
 io.on("connection",(socket)=>{
     console.log("connected");
     socket.on("join",(data)=>{
-        console.log("in room");
+        console.log("in room "+data.roomName);
         let newUser = joinUser(socket.id,data.username,data.roomName);
         socket.emit("IUR socket", {
             id:socket.id,
