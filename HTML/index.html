@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+<script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+
+</head>
+
 <body>
 
-<h1>Heading</h1>
+    <h1>Heading</h1>
 
-<p>paragraph.</p>
+    <p>paragraph.</p>
 
 </body>
+<script>
+
+    let userName = prompt("write your name:");
+    let roomName = prompt("write room name or number:");
+    let ID = "";
+    var socket = io();
+    socket.emit("join", {
+        username: userName,
+        roomName: roomName
+    });
+    //I - Id
+    //U - username
+    //R - room name
+    socket.on("IUR socket", (data) => {
+        ID = data.id;
+        console.log(userName + "'s ID: " + ID);
+    })
+</script>
+
 </html>
