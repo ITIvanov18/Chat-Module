@@ -1,4 +1,4 @@
-
+const roomName = document.getElementById('room-name');
 const queryString = window.location.search;
 
 const urlParams=new URLSearchParams(queryString)
@@ -14,3 +14,24 @@ socket.emit("join", {
     username: userName,
     room: roomId
 });
+
+// Get room and users
+socket.on('roomUsers', ({ room, users }) => {
+    outputRoomName(room);
+    outputUsers(users);
+  });
+
+
+function outputRoomName(room) {​​​​​​​​
+roomName.innerText = room;
+}​​​​​​​​
+
+function outputUsers(users) {​​​​​​​​
+userList.innerHTML = '';
+users.forEach((user) => {​​​​​​​​
+constli = document.createElement('li');
+li.innerText = user.username;
+userList.appendChild(li);
+  }​​​​​​​​);
+}​​​​​​​​
+
