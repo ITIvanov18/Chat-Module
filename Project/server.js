@@ -24,11 +24,18 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname+'/public/HTML/index.html');
 });
 
+app.get('/chat.html', (req, res) => {
+    res.sendFile(__dirname+'/public/HTML/chat.html');
+});
+
 var room="";
 io.on('connection', socket => {
-    socket.on('joinRoom', ({ username, room }) => {
-      const user = userJoin(socket.id, username, room);
-   
+    socket.on("join", ({ username, room }) => {
+      console.log("user name: "+username);
+      console.log("room num: "+ room);
+
+      const user = joinUser(socket.id, username, room);
+
       socket.join(user.room);
    
       // Broadcast when a user connects
@@ -36,7 +43,7 @@ io.on('connection', socket => {
         .to(user.room)
         .emit(
           'message',
-          formatMessage(' ', '${user.username} has joined the chat')
+          formatMessage(' ', `${user.username} has joined the chat`)
         );
    
     // Send users and room info
@@ -55,12 +62,12 @@ io.on('connection', socket => {
    
     // Runs when client disconnects
     socket.on('disconnect', () => {
-      const user = userLeave(socket.id);
+      const user = removeUser(socket.id);
    
       if (user) {
         io.to(user.room).emit(
           'message',
-          formatMessage(' ', '${user.username} has left the chat')
+          formatMessage("", `${user.username} has left the chat`)
         );
    
         // Send users and room info

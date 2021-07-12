@@ -1,16 +1,16 @@
 
-    let userName = "";
-    let roomName = "";
-    let ID = "";
-    var socket = io();
-    socket.emit("join", {
-        username: userName,
-        roomName: roomName
-    });
-    //I - Id
-    //U - username
-    //R - room name
-    socket.on("IUR socket", (data) => {
-        ID = data.id;
-        console.log(userName + "'s ID: " + ID);
-    })
+const queryString = window.location.search;
+
+const urlParams=new URLSearchParams(queryString)
+// Get username and room from URL
+let userName = urlParams.get('username');
+let roomId = urlParams.get('roomId');
+
+console.log("username "+userName);
+console.log("room num: "+roomId);
+
+var socket = io();
+socket.emit("join", {
+    username: userName,
+    room: roomId
+});

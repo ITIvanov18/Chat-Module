@@ -4,8 +4,6 @@
 <head>
 <script src="socket.io/socket.io.js"></script>
 
-<script src="../JS/index.js"></script>
-
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 crossorigin="anonymous"></script>
@@ -20,8 +18,8 @@ crossorigin="anonymous"></script>
         <header class="join-header">
             <h1><i class="fas fa-smile"></i> Wellcome to --name--</h1>
         </header>
-        <main class="join-main">
-            <form action="chat.html">
+        <main class="form-main">
+            <form action="/chat.html">
                 <div class="form-control">
                     <label for="username">Username</label>
                     <input
@@ -34,13 +32,13 @@ crossorigin="anonymous"></script>
                 </div>
                 <div class="form-control">
                     <label for="room">Room</label>
-                    <select name="room" id="room">
-                        <option value="room1">room1</option>
-                        <option value="room2">room2</option>
-                        <option value="room3">room3</option>
-                        <option value="room4">room4</option>
-                        <option value="room5">room5</option>
-                        <option value="room6">room6</option>
+                    <select name="roomId" id="room">
+                        <option value="1">room1</option>
+                        <option value="2">room2</option>
+                        <option value="3">room3</option>
+                        <option value="4">room4</option>
+                        <option value="5">room5</option>
+                        <option value="6">room6</option>
                     </select>
                 </div>
                 <button type="submit" class="btn">Join Chat</button>
