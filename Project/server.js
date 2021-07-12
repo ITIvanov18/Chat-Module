@@ -2,7 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-const formatMessage = require('./messages');
+const formatMessage = require('./private/messages');
 
 const app = express();
 const server = http.createServer(app);
@@ -13,13 +13,15 @@ const {
   getCurrentUser,
   removeUser,
   getRoomUsers
-} = require('./users');
+} = require('./private/users');
 
 const port = process.env.PORT || 6969;
 
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/', (req, res) => {
-    const index = path.join(__dirname, '/../HTML', '.', '/index.html');
-    res.sendFile(index);
+    res.sendFile(__dirname+'/public/HTML/index.html');
 });
 
 var room="";
