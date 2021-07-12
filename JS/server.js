@@ -1,11 +1,22 @@
-const express = require('express');
-const app = express();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
-const port = process.env.PORT || 6969;
 const path = require('path');
-const { joinUser, removeUser } = require('./users');
-app.use(express.static('./'));
+const http = require('http');
+const express = require('express');
+const socketio = require('socket.io');
+const formatMessage = require('./messages');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
+
+const {
+  joinUser,
+  getCurrentUser,
+  removeUser,
+  getRoomUsers
+} = require('./users');
+
+const port = process.env.PORT || 6969;
+
 app.get('/', (req, res) => {
     const index = path.join(__dirname, '/../HTML', '.', '/index.html');
     res.sendFile(index);
@@ -28,6 +39,6 @@ io.on("connection",(socket)=>{
     });
 });
 
-http.listen(port, () => {
+server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);
 });
