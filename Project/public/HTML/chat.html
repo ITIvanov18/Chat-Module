@@ -5,9 +5,6 @@
     integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
     crossorigin="anonymous"
   ></script>
-<script src="/socket.io/socket.io.js"> </script>
-<script src="../JS/index.js"> </script>
-
 <link rel="stylesheet" href="../CSS/style.css">
 <link
       rel="stylesheet"
@@ -24,7 +21,7 @@
         <main class="chat-main">
             <div class="chat-sidebar">
                 <h3><i class="fas fa-comments"></i> Room Name:</h3>
-                <h2 id="room-name"></h2>
+                <h2 id="roomId"></h2>
                 <h3><i class="fas fa-users"></i> Users</h3>
                 <ul id="users" style="list-style:none"></ul>
             </div>
@@ -38,5 +35,7 @@
         </div>
     </div>
 </body>
+<script src="/socket.io/socket.io.js"> </script>
+<script src="../JS/index.js"> </script>
 
 </html>

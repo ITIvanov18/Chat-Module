@@ -49,7 +49,7 @@ io.on('connection', socket => {
     // Send users and room info
     io.to(user.room).emit('roomUsers', {
         room: user.room,
-        users: getRoomUsers(user.room)
+        currentUsers: getRoomUsers(user.room)
       });
     });
    

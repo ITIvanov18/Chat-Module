@@ -4,7 +4,7 @@ function joinUser(socketId, userName, roomName) {
   {
     socketID: socketId,
     username: userName,
-    roomname: roomName,
+    room: roomName,
   }
   users.push(user)
   return user
