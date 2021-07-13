@@ -10,8 +10,8 @@ function joinUser(socketId, userName, roomName) {
   return user
 }
 
-function getCurrentUser(id) {
-  return users.find(user => user.id === id);
+function getCurrentUser(idsocket) {
+  return users.find(user =>{ user.id === idsocket});
 }
 
 function removeUser(id) {

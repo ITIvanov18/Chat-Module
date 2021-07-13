@@ -7,7 +7,6 @@ const formatMessage = require('./private/messages');
 const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
-
 const {
   joinUser,
   getCurrentUser,
@@ -30,34 +29,33 @@ app.get('/chat.html', (req, res) => {
 
 var room="";
 io.on('connection', socket => {
+  console.log("connected");
     socket.on("join", ({ username, room }) => {
-      console.log("user name: "+username);
-      console.log("room num: "+ room);
+      console.log('in room');
 
       const user = joinUser(socket.id, username, room);
-
-      socket.join(user.room);
+          
    
       // Broadcast when a user connects
       socket.broadcast
         .to(user.room)
         .emit(
           'message',
-          formatMessage(' ', `${user.username} has joined the chat`)
+          formatMessage('system: ', `${user.username} has joined the chat`)
         );
    
     // Send users and room info
-    io.to(user.room).emit('roomUsers', {
+    socket.emit('roomUsers', {
         room: user.room,
         currentUsers: getRoomUsers(user.room)
       });
+      console.log(user);
+      socket.join(user.room);
     });
    
     // Listen for chatMessage
-    socket.on('chatMessage', msg => {
-      const user = getCurrentUser(socket.id);
-   
-      io.to(user.room).emit('message', formatMessage(user.username, msg));
+    socket.on('chatMessage', data => {
+      io.to(data.roomId).emit('message', formatMessage(data.userName, data.msg));
     });
    
     // Runs when client disconnects
@@ -71,9 +69,9 @@ io.on('connection', socket => {
         );
    
         // Send users and room info
-        io.to(user.room).emit('roomUsers', {
+        socket.emit('roomUsers', {
           room: user.room,
-          users: getRoomUsers(user.room)
+          currentUsers: getRoomUsers(user.room)
         });
       }
     });

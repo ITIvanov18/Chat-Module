@@ -1,27 +1,79 @@
-var roomName = document.getElementById('roomId');
-var userList = document.getElementById('users');
-const queryString = window.location.search;
+const chatMessages = document.getElementsByClassName('.chat-messages');
 
-const urlParams=new URLSearchParams(queryString)
+const roomName = document.getElementById('roomId');
+const userList = document.getElementById('users');
+
 // Get username and room from URL
-var userName = urlParams.get('username');
-var roomId = urlParams.get('roomId');
+const urlParams = new URLSearchParams(window.location.search);
+const userName = urlParams.get('username');
+const roomId = urlParams.get('roomId');
 
-console.log("username "+userName);
-console.log("room id: "+roomId);
+console.log("username " + userName);
+console.log("room id: " + roomId);
 
 var socket = io();
 socket.emit("join", {
-    username: userName,
-    room: roomId
+  username: userName,
+  room: roomId
 });
 
 // Get room and users
-socket.on('roomUsers', ({ room, currentUsers }) => {
-    outputRoomName(room);
-    outputUsers(currentUsers);
-  });
+socket.on('roomUsers', (data) => {
+  outputRoomName(data.room);
+  outputUsers(data.currentUsers);
+});
 
+
+// Message from server
+socket.on('message', (message) => {
+  console.log(message);
+  outputMessage(message);
+
+  // Scroll down
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+// Message submit
+document
+.getElementById('chat-form')
+.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  // Get message text
+  let msg = event.target.elements.msg.value;
+
+  msg = msg.trim();
+
+  if (!msg) {
+    return false;
+  }
+  console.log(msg);
+  // Emit message to server
+  socket.emit('chatMessage', {msg,userName,roomId});
+
+  // Clear input
+  event.target.elements.msg.value = '';
+  event.target.elements.msg.focus();
+});
+
+function outputMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('message');
+
+  //Add a paragraph for user's name and time
+  const p = document.createElement('p');
+  p.classList.add('meta');
+  p.innerText = message.username;
+  p.innerHTML += `<span>${message.time}</span>`;
+
+  //Append and display the message from the server with the paragraph
+  div.appendChild(p);
+  const paragraph = document.createElement('p');
+  paragraph.classList.add('text');
+  paragraph.innerText = message.text;
+  div.appendChild(paragraph);
+  document.querySelector('.chat-messages').appendChild(div);
+}
 
 // Add room name to DOM
 function outputRoomName(room) {
