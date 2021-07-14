@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.500)), url(https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Purple-Modern-Pattern-Simple-Background-Image.jpg);
+    font-size: 16px;
+    color: white;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 30px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    display: inline-block;
+    padding-bottom: 8px;
+    font-family: sans-serif;
+}
+
+.join-container{
+    padding-top:100px;
+}
+
+.form-main{
+    padding-top:100px;
+}
+
+#username {
+    width: 120px;
+}
+
+.input-username{
+    width: 145px;
+    margin: 6px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+.input-rooms{
+    margin: 6px 0;
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 5px 15px;
+    background-color: white ;
+    color: #667aff;
+    border: 0;
+    font-size: 17px;
+}
+
+.custom-btn {
+    position: fixed;
+    top: 88px; 
+    width: 270px;
+    height: 50px;
+    color:white;
+    padding: 10px 25px;
+    border: 5px solid #2D1055;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    position: relative;
+    display: inline-block;
+  }
+
+.btn-3 {
+    font-size: 25px;
+    line-height: 43px;
+    padding: 0;
+  }
+  .btn-3:hover{
+    background: transparent;
+    color: rgb(227, 170, 253);
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+
+
+/* Chat Page */
+
+.chat-container {
+    max-width: 1200px;
+    background: #fff;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #667aff;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.chat-sidebar {
+    background: #7386ff;
+    color: #fff;
+    padding: 20px 20px 60px;
+    overflow-y: scroll;
+}
+
+.chat-sidebar h2 {
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.status {
+    position: absolute;
+    color:rgba(100, 107, 202, 0.699);
+    bottom: 0;
+    height: 20px;
+}
+
+.chat-messages {
+    padding-bottom: 20px;
+    color:rgb(122, 122, 122);
+    padding: 30px;
+    max-height: 500px;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.chat-messages .message {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #eff0f5f1;
+    border-radius: 5px;
+    overflow-wrap: break-word;
+}
+
+.chat-messages .message .meta {
+    font-size: 15px;
+    font-weight: bold;
+    color: #7386ff;
+    opacity: 0.7;
+    margin-bottom: 7px;
+}
+
+.chat-form-container {
+    padding: 20px 30px;
+    background-color: #667aff;
+}
+
+.chat-form-container form {
+    display: flex;
+}
+
+.chat-form-container input[type='text'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    flex: 1;
+}
+
+
+@media (max-width: 690px) {
+    .chat-main {
+        display: block;
+    }
+    .chat-sidebar {
+        display: none;
+    }
+}

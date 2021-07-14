@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="socket.io/socket.io.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="../CSS/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+
+</head>
+
+<body>
+    <div class="join-container">
+        <header class="join-header">
+            <h1 style="font-size: 70px;" class="title"> Welcome to Chat-Module</h1>
+            <br>
+            <br>
+            <br>
+
+        </header>
+        <main class="form-main">
+            <form action="/chat.html">
+                <div class="form-control">
+                   <center> <label for="username" style="font-size: 28px;">Username  </label>
+                    <input class="input-username"
+                        type="text"
+                        name="username"
+                        placeholder="Enter username..."
+                        required
+                    > 
+                </center> 
+
+                </div>
+                <center><div class="form-control">
+                    <label for="room" style="font-size: 25px;">Room  </label> 
+                    <select name="roomId" id="room" class="input-rooms">
+                        <option value="room1">room1</option>
+                        <option value="room2">room2</option>
+                        <option value="room3">room3</option>
+                        <option value="room4">room4</option>
+                        <option value="room5">room5</option>
+                        <option value="room6">room6</option>
+                    </select>
+                </div> 
+                </center>
+                
+                <br>
+                <br>
+                <br>
+                <br>
+
+                   <center> <button type="submit" class="custom-btn btn-3"><span>Join Chat</span></button> </center>
+                    </div>
+                    </span>
+
+                  </a>
+                <div>
+            </form>
+        </main>
+</body>
+
+</html>
