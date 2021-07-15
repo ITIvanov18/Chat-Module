@@ -157,7 +157,7 @@ body {
 }
 
 .chat-header {
-    background: rgb(78 5 84 / 75%);
+    background: rgb(119 30 176) 75%;
     color: #fff;
     padding: 15px;
     display: flex;
@@ -171,7 +171,7 @@ body {
 }
 
 .chat-sidebar {
-    background: #49494969;
+    background: #300387a8;
     color: #fff;
     padding: 20px 20px 60px;
     overflow-y: scroll;
@@ -218,7 +218,7 @@ body {
 
 .chat-form-container {
     padding: 20px 30px;
-    background-color: rgb(78 5 84 / 75%);
+    background-color: rgb(119 30 176);
 }
 
 .chat-form-container form {
