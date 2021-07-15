@@ -45,13 +45,18 @@
 <li><img src="https://i.imgur.com/qGLlNiw.png" width="40" height="40">HTML</li> <br>
 <li><img src="https://i.imgur.com/UZbXZ50.png" width="25" height="35">CSS </li> <br>
 </ul>
+
+## 🖨 Documentation and Presentation
+
+- [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/itivanov18_codingburgas_bg/EelNNurGhWlHhT3I8iwms8wBZznynPXR6DZ4-X8Lx9a8Og?e=Qnyhc4)
+- [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/mvatanasov18_codingburgas_bg/EdSJ8gJrHk1Pr-NvSuAjRN0BCJ6jO-QqoVLTNrHbQ99wqA?e=1cwa4d)
 <br>
 
 
 ## 👨🏽‍💻 Future Updates
 <li> Importing photos feature </li>
 <li> Friend request option </li>
-<li> Login system development </li>
+<li> Login system development </li><br>
 
 
 ## 📝 Contact Us
