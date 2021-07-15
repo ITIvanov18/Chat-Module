@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.500),rgba(0, 0, 0, 0.500)), url(https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Purple-Modern-Pattern-Simple-Background-Image.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.500)), url(https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Purple-Modern-Pattern-Simple-Background-Image.jpg);
     font-size: 16px;
     color: white;
     margin: 20px;
@@ -15,7 +15,7 @@ body {
     align-items: center;
 }
 
-.title{
+.title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-top: 30px;
@@ -25,26 +25,22 @@ body {
     font-family: sans-serif;
 }
 
-.join-container{
-    padding-top:100px;
-}
-
-.form-main{
-    padding-top:100px;
+.join-container {
+    padding-top: 100px;
 }
 
 #username {
     width: 120px;
 }
 
-.input-username{
+.input-username {
     width: 145px;
     margin: 6px 0;
     padding: 10px 10px;
     font-size: 15px;
 }
 
-.input-rooms{
+.input-rooms {
     margin: 6px 0;
     padding: 10px 10px;
     font-size: 15px;
@@ -53,18 +49,18 @@ body {
 .btn {
     cursor: pointer;
     padding: 5px 15px;
-    background-color: white ;
-    color: #667aff;
+    background-color: white;
+    color: #000000;
     border: 0;
     font-size: 17px;
 }
 
 .custom-btn {
     position: fixed;
-    top: 88px; 
+    top: 88px;
     width: 270px;
     height: 50px;
-    color:white;
+    color: white;
     padding: 10px 25px;
     border: 5px solid #2D1055;
     font-family: 'Lato', sans-serif;
@@ -74,69 +70,81 @@ body {
     transition: all 0.5s ease;
     position: relative;
     display: inline-block;
-  }
+}
 
 .btn-3 {
     font-size: 25px;
     line-height: 43px;
     padding: 0;
-  }
-  .btn-3:hover{
+}
+
+.btn-3:hover {
     background: transparent;
     color: rgb(227, 170, 253);
-  }
-  .btn-3 span {
+}
+
+.btn-3 span {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
-  }
-  .btn-3:before,
-  .btn-3:after {
+}
+
+.btn-3:before,
+.btn-3:after {
     position: absolute;
     content: "";
     left: 0;
     top: 0;
     background: rgb(255, 255, 255);
     transition: all 0.3s ease;
-  }
-  .btn-3:before {
+}
+
+.btn-3:before {
     height: 0%;
     width: 2px;
-  }
-  .btn-3:after {
+}
+
+.btn-3:after {
     width: 0%;
     height: 2px;
-  }
-  .btn-3:hover:before {
+}
+
+.btn-3:hover:before {
     height: 100%;
-  }
-  .btn-3:hover:after {
+}
+
+.btn-3:hover:after {
     width: 100%;
-  }
-  .btn-3 span:before,
-  .btn-3 span:after {
+}
+
+.btn-3 span:before,
+.btn-3 span:after {
     position: absolute;
     content: "";
     right: 0;
     bottom: 0;
     background: rgb(255, 255, 255);
     transition: all 0.3s ease;
-  }
-  .btn-3 span:before {
+}
+
+.btn-3 span:before {
     width: 2px;
     height: 0%;
-  }
-  .btn-3 span:after {
+}
+
+.btn-3 span:after {
     width: 0%;
     height: 2px;
-  }
-  .btn-3 span:hover:before {
+}
+
+.btn-3 span:hover:before {
     height: 100%;
-  }
-  .btn-3 span:hover:after {
+}
+
+.btn-3 span:hover:after {
     width: 100%;
-  }
+}
 
 
 /* Chat Page */
@@ -149,10 +157,8 @@ body {
 }
 
 .chat-header {
-    background: #667aff;
+    background: rgb(78 5 84 / 75%);
     color: #fff;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     padding: 15px;
     display: flex;
     align-items: center;
@@ -165,7 +171,7 @@ body {
 }
 
 .chat-sidebar {
-    background: #7386ff;
+    background: #49494969;
     color: #fff;
     padding: 20px 20px 60px;
     overflow-y: scroll;
@@ -180,14 +186,14 @@ body {
 
 .status {
     position: absolute;
-    color:rgba(100, 107, 202, 0.699);
+    color: rgba(100, 107, 202, 0.7);
     bottom: 0;
     height: 20px;
 }
 
 .chat-messages {
     padding-bottom: 20px;
-    color:rgb(122, 122, 122);
+    color: rgb(122, 122, 122);
     padding: 30px;
     max-height: 500px;
     overflow-y: scroll;
@@ -205,14 +211,14 @@ body {
 .chat-messages .message .meta {
     font-size: 15px;
     font-weight: bold;
-    color: #7386ff;
+    color: #898c9f;
     opacity: 0.7;
     margin-bottom: 7px;
 }
 
 .chat-form-container {
     padding: 20px 30px;
-    background-color: #667aff;
+    background-color: rgb(78 5 84 / 75%);
 }
 
 .chat-form-container form {
@@ -224,8 +230,8 @@ body {
     padding: 5px;
     height: 40px;
     flex: 1;
+    color: rgb(0 0 0);
 }
-
 
 @media (max-width: 690px) {
     .chat-main {
