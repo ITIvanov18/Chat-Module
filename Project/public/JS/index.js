@@ -30,7 +30,8 @@ socket.on('message', (message) => {
     outputMessage(message);
 
     // Scroll down
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+    var objDiv = document.getElementById("chat-messages");
+    objDiv.scrollTop = objDiv.scrollHeight;
 });
 
 let timer,
